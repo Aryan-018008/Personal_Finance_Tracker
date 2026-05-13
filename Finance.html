@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FinTrack- Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+
+  <header>
+    <h2>FinTrack</h2>
+
+    <div class="header-right">
+      <h3 id="welcomeUser"></h3>
+
+      <button id="themeToggle">🌙</button>
+
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <!-- Summary -->
+
+  <section class="summary">
+
+    <div class="card">
+      <h3>Total Expenses</h3>
+      <p id="totalExpense">₹0</p>
+    </div>
+
+    <div class="card">
+      <h3>Budget</h3>
+      <p id="budgetDisplay">₹0</p>
+    </div>
+
+    <div class="card">
+      <h3>Remaining</h3>
+      <p id="remainingBudget">₹0</p>
+    </div>
+
+    <div class="card">
+      <h3>Transactions</h3>
+      <p id="totalTransactions">0</p>
+    </div>
+
+  </section>
+
+  <!-- Budget -->
+
+  <section class="budget-section">
+    <input type="number" id="budgetInput" placeholder="Set Monthly Budget">
+    <button id="setBudgetBtn">Set</button>
+  </section>
+
+  <!-- Expenses -->
+
+  <section class="expense-form">
+
+    <h2>Add Expense</h2>
+
+    <form id="expenseForm">
+
+      <input type="text" id="title" placeholder="Expense Title" required>
+
+      <input type="number" id="amount" placeholder="Amount" required>
+
+      <select id="category" required>
+        <option value="">Select Category</option>
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Shopping</option>
+        <option>Bills</option>
+        <option>Entertainment</option>
+        <option>Other</option>
+      </select>
+
+      <input type="date" id="date" required>
+
+      <button type="submit">Add</button>
+
+    </form>
+</section>
+
+<!-- Filter -->
+
+  <!-- <section class="filters">
+     <h2>Expense List</h2>    
+    <input type="text" id="searchInput" placeholder="Search Expenses">
+<select id="filterCategory">
+      <option value="All">All Categories</option>
+      <option value="Food">Food</option>
+      <option value="Travel">Travel</option>
+      <option value="Shopping">Shopping</option>
+      <option value="Bills">Bills</option>
+      <option value="Entertainment">Entertainment</option>
+    </select>
+<button id="exportCSV">Export CSV</button>
+</section> -->
+
+<section class="filters">
+
+  <h2>Expense List</h2>
+
+  <div class="filter-controls">
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search Expenses"
+    >
+
+    <select id="filterCategory">
+
+      <option value="All">All Categories</option>
+      <option value="Food">Food</option>
+      <option value="Travel">Travel</option>
+      <option value="Shopping">Shopping</option>
+      <option value="Bills">Bills</option>
+      <option value="Entertainment">Entertainment</option>
+
+    </select>
+
+    <button id="exportCSV">
+      Export CSV
+    </button>
+
+  </div>
+
+</section>
+
+  <!-- Expense List -->
+
+   <section class="expense-list-section">
+    <div id="expenseList"></div>
+   </section> 
+
+  <!--  Analytics Chart -->
+
+  <section class="chart-section">
+    <h2>Expense Chart</h2>
+    <canvas id="expenseChart"></canvas>
+  </section>
+
+  <script src="Finance.js"></script>
+
+</body>
+</html>
