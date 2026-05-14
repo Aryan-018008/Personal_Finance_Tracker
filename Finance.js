@@ -161,16 +161,74 @@ function editExpense(id){
 
 /* Budget */
 
+// document.getElementById(
+//   "setBudgetBtn"
+// ).addEventListener("click", () => {
+
+//   budget = document.getElementById("budgetInput").value;
+
+//   saveData();
+
+//   updateSummary();
+// });
+
+/* Budget Elements */
+
+const budgetInput = document.getElementById("budgetInput");
+
+const budgetContainer = document.getElementById("budgetContainer");
+
+const budgetDisplayBox = document.getElementById("budgetDisplayBox");
+
+const budgetText = document.getElementById("budgetText");
+
+const editBudgetBtn = document.getElementById("editBudgetBtn");
+
+/* LOAD BUDGET ON PAGE */
+
+if(budget > 0){
+
+  budgetContainer.classList.add("hidden");
+
+  budgetDisplayBox.classList.remove("hidden");
+
+  budgetText.innerText = `₹${budget}`;
+}
+
+/* SET BUDGET */
+
 document.getElementById(
   "setBudgetBtn"
 ).addEventListener("click", () => {
 
-  budget = document.getElementById("budgetInput").value;
+  budget = budgetInput.value;
+
+  if(budget === "") return;
 
   saveData();
 
   updateSummary();
+
+  budgetText.innerText = `₹${budget}`;
+
+  budgetContainer.classList.add("hidden");
+
+  budgetDisplayBox.classList.remove("hidden");
+
 });
+
+/* EDIT BUDGET */
+
+editBudgetBtn.addEventListener("click", () => {
+
+  budgetContainer.classList.remove("hidden");
+
+  budgetDisplayBox.classList.add("hidden");
+
+  budgetInput.value = budget;
+
+});
+
 
 /* Search Bar */
 
