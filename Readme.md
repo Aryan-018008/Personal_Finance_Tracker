@@ -68,7 +68,7 @@ git clone https://github.com/Aryan-018008/Personal_Finance_Tracker.git
 ## Start Using
 
 - Enter your name
-- Proceed to the dashboard
+- Redirect to the  Finance dashboard
 - Start managing your expenses
 
 ---
@@ -84,7 +84,6 @@ git clone https://github.com/Aryan-018008/Personal_Finance_Tracker.git
 - Dark & Light Theme Toggle
 - LocalStorage Data Persistence
 - Export Expense Data as CSV
-- Responsive Table-based Expense List
 
 ---
 
