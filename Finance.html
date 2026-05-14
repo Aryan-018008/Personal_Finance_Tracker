@@ -96,11 +96,44 @@
 
   <!-- Budget -->
 
-  <section class="budget-section">
+  <!-- <section class="budget-section">
     <h2>Budget Management</h2>
     <input type="number" id="budgetInput" placeholder="Set Monthly Budget">
     <button id="setBudgetBtn">Set</button>
-  </section>
+  </section> -->
+
+  <section class="budget-section">
+
+  <h2>Budget Management</h2>
+
+  <div id="budgetContainer">
+
+    <input 
+      type="number" 
+      id="budgetInput" 
+      placeholder="Set Monthly Budget"
+    >
+
+    <button id="setBudgetBtn">
+      Set Budget
+    </button>
+
+  </div>
+
+  <div id="budgetDisplayBox" class="hidden">
+
+    <h3>
+      Your Budget is 
+      <span id="budgetText">₹0</span>
+    </h3>
+
+    <button id="editBudgetBtn">
+      Edit
+    </button>
+
+  </div>
+
+</section>
 
   <!-- Expenses -->
 
