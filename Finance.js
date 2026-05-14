@@ -15,21 +15,13 @@ let userData = JSON.parse(localStorage.getItem(userKey));
 let expenses = userData.expenses || [];
 
 let budget = userData.budget || 0;
-
 const expenseForm = document.getElementById("expenseForm");
-
 const expenseList = document.getElementById("expenseList");
-
 const totalExpense = document.getElementById("totalExpense");
-
 const budgetDisplay = document.getElementById("budgetDisplay");
-
 const remainingBudget = document.getElementById("remainingBudget");
-
 const totalTransactions = document.getElementById("totalTransactions");
-
 const searchInput = document.getElementById("searchInput");
-
 const filterCategory = document.getElementById("filterCategory");
 
 let chart;
@@ -250,21 +242,49 @@ function updateChart(){
 
 /* Theme */
 
+// const themeToggle = document.getElementById("themeToggle");
+
+// if(localStorage.getItem("theme") === "dark"){
+//   document.body.classList.add("dark");
+// }
+
+// themeToggle.addEventListener("click", () => {
+
+//   document.body.classList.toggle("dark");
+
+//   if(document.body.classList.contains("dark")){
+//     localStorage.setItem("theme", "dark");
+//   }else{
+//     localStorage.setItem("theme", "light");
+//   }
+
+// });
+
 const themeToggle = document.getElementById("themeToggle");
 
+/* LOAD THEME */
+
 if(localStorage.getItem("theme") === "dark"){
-  document.body.classList.add("dark");
+
+    document.body.classList.add("dark");
+
+    themeToggle.checked = true;
 }
 
-themeToggle.addEventListener("click", () => {
+/* TOGGLE THEME */
 
-  document.body.classList.toggle("dark");
+themeToggle.addEventListener("change", () => {
 
-  if(document.body.classList.contains("dark")){
-    localStorage.setItem("theme", "dark");
-  }else{
-    localStorage.setItem("theme", "light");
-  }
+    document.body.classList.toggle("dark");
+
+    if(document.body.classList.contains("dark")){
+
+        localStorage.setItem("theme", "dark");
+
+    }else{
+
+        localStorage.setItem("theme", "light");
+    }
 
 });
 
