@@ -159,18 +159,6 @@ function editExpense(id){
   deleteExpense(id);
 }
 
-/* Budget */
-
-// document.getElementById(
-//   "setBudgetBtn"
-// ).addEventListener("click", () => {
-
-//   budget = document.getElementById("budgetInput").value;
-
-//   saveData();
-
-//   updateSummary();
-// });
 
 /* Budget Elements */
 
@@ -184,7 +172,7 @@ const budgetText = document.getElementById("budgetText");
 
 const editBudgetBtn = document.getElementById("editBudgetBtn");
 
-/* LOAD BUDGET ON PAGE */
+/* Budget Loading */
 
 if(budget > 0){
 
@@ -195,7 +183,7 @@ if(budget > 0){
   budgetText.innerText = `₹${budget}`;
 }
 
-/* SET BUDGET */
+/* Budget Set */
 
 document.getElementById(
   "setBudgetBtn"
@@ -217,7 +205,7 @@ document.getElementById(
 
 });
 
-/* EDIT BUDGET */
+/* Edit */
 
 editBudgetBtn.addEventListener("click", () => {
 
@@ -298,29 +286,11 @@ function updateChart(){
 
 }
 
-/* Theme */
 
-// const themeToggle = document.getElementById("themeToggle");
-
-// if(localStorage.getItem("theme") === "dark"){
-//   document.body.classList.add("dark");
-// }
-
-// themeToggle.addEventListener("click", () => {
-
-//   document.body.classList.toggle("dark");
-
-//   if(document.body.classList.contains("dark")){
-//     localStorage.setItem("theme", "dark");
-//   }else{
-//     localStorage.setItem("theme", "light");
-//   }
-
-// });
 
 const themeToggle = document.getElementById("themeToggle");
 
-/* LOAD THEME */
+/*Theme Loading */
 
 if(localStorage.getItem("theme") === "dark"){
 
@@ -329,7 +299,7 @@ if(localStorage.getItem("theme") === "dark"){
     themeToggle.checked = true;
 }
 
-/* TOGGLE THEME */
+/* Theme Toggle */
 
 themeToggle.addEventListener("change", () => {
 
